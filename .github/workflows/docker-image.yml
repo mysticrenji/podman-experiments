@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+defaults:
+  run:
+    working-directory: ./podman-fedora
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,8 +23,6 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
       - name: 'Build and push image'
         uses: docker/build-push-action@v1
-        env:
-           working-directory: ./podman-fedora
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
