@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
+    env:
+       working-directory: ./podman-fedora
     steps:
       - name: "Checkout"
         uses: actions/checkout@v2
