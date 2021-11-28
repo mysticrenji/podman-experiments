@@ -13,7 +13,7 @@ spec:
   containers:
     - name: podman
       imagePullPolicy: Always
-      image: docker.io/mysticrenji/podman
+      image: docker.io/mysticrenji/podman:latest
       command:
         - cat
       tty: true
