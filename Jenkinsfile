@@ -59,6 +59,7 @@ spec:
               cd podman-experiments
               mkdir wordpress_data db_data && podman-compose up
               podman-compose down
+              podman images
               '''
             }
          }
