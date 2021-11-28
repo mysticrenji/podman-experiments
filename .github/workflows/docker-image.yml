@@ -9,8 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
-    env:
-       working-directory: ./podman-fedora
     steps:
       - name: "Checkout"
         uses: actions/checkout@v2
@@ -22,6 +20,8 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
       - name: 'Build and push image'
         uses: docker/build-push-action@v1
+        env:
+           working-directory: ./podman-fedora
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
