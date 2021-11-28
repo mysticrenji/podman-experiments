@@ -12,7 +12,7 @@ FROM registry.fedoraproject.org/fedora:latest
 # directories used by yum that are just taking
 # up space.
 RUN dnf -y update; rpm --restore shadow-utils 2>/dev/null; \
-yum -y install podman podman-compose git fuse-overlayfs --exclude container-selinux; \
+yum -y install podman podman-compose git docker-compose podman-docker fuse-overlayfs --exclude container-selinux; \
 rm -rf /var/cache /var/log/dnf* /var/log/yum.*
 
 RUN useradd podman; \
