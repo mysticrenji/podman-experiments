@@ -57,7 +57,8 @@ spec:
               sh '''
               git clone https://github.com/mysticrenji/podman-experiments.git
               cd podman-experiments
-              mkdir wordpress_data db_data && podman-compose up
+              export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
+              mkdir wordpress_data db_data && podman-compose up -d
               podman-compose down
               podman images
               '''
