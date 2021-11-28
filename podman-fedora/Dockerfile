@@ -17,8 +17,7 @@ rm -rf /var/cache /var/log/dnf* /var/log/yum.*
 
 RUN useradd podman; \
 echo podman:10000:5000 > /etc/subuid; \
-echo podman:10000:5000 > /etc/subgid; \
-systemctl enable --now --user podman.socket
+echo podman:10000:5000 > /etc/subgid;
 
 RUN mkdir -p /home/podman/.local/share/containers; chown podman:podman -R /home/podman
 
