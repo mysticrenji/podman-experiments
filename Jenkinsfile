@@ -58,8 +58,8 @@ spec:
               git clone https://github.com/mysticrenji/podman-experiments.git
               cd podman-experiments
               export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
-              mkdir wordpress_data db_data && docker-compose up -d
-              podman-compose up
+              mkdir wordpress_data db_data && podman-compose up -d
+              podman-compose down
               podman images
               '''
             }
