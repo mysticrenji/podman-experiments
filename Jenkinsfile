@@ -57,7 +57,7 @@ spec:
               sh '''
               git clone https://github.com/mysticrenji/podman-experiments.git
               cd podman-experiments
-              mkdir wordpress_data db_data && podman-compose up -d
+              podman-compose up -d
               podman-compose down
               podman images
               '''
