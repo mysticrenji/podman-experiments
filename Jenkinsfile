@@ -59,7 +59,7 @@ spec:
               cd podman-experiments
               export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
               mkdir wordpress_data db_data && docker-compose up -d
-              docker-compose down
+              podman-compose up
               podman images
               '''
             }
