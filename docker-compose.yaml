@@ -18,7 +18,7 @@ services:
 
   mysql:
     image: docker.io/library/mysql:5.7
-    network_mode: bridge
+    network_mode: pod-net
     volumes:
       - todo-mysql-data:/var/lib/mysql
     environment: 
