@@ -60,7 +60,7 @@ spec:
               podman create network pod-net
               podman-compose -t identity up -d
               sleep 45
-              podman-compose -it identity down
+              podman-compose -t identity down
               podman images
               '''
             }
