@@ -57,8 +57,10 @@ spec:
               sh '''
               git clone https://github.com/mysticrenji/podman-experiments.git
               cd podman-experiments
-              podman-compose up -d
-              podman-compose down
+              podman create network pod-net
+              podman-compose -t identity up -d
+              sleep 45
+              podman-compose -it identity down
               podman images
               '''
             }
