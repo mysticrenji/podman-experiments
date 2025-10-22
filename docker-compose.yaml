@@ -17,7 +17,7 @@ services:
       MYSQL_DB: todos
 
   mysql:
-    image: docker.io/library/mysql:9.4
+    image: docker.io/library/mysql:9.5
     network_mode: pod-net
     volumes:
       - todo-mysql-data:/var/lib/mysql
